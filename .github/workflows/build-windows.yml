@@ -3,15 +3,6 @@ name: Build Windows Agent
 on:
   push:
     branches: [ master ]
-    paths:
-      - 'meshservice/**'
-      - 'meshconsole/**'
-      - 'meshreset/**'
-      - 'meshcore/**'
-      - 'microstack/**'
-      - 'microscript/**'
-      - '*.sln'
-      - '*.vcxproj'
   pull_request:
     branches: [ master ]
   workflow_dispatch:
