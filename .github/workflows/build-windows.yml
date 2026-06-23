@@ -16,19 +16,19 @@ jobs:
           - name: x64-Service
             platform: x64
             project: meshservice/MeshService-2022.vcxproj
-            output: meshservice/x64/Release/MeshService.exe
+            output: Release/MeshService.exe
           - name: x86-Service
             platform: Win32
             project: meshservice/MeshService-2022.vcxproj
-            output: meshservice/Release/MeshService.exe
+            output: Release/MeshService.exe
           - name: x64-Console
             platform: x64
             project: meshconsole/MeshConsole-2022.vcxproj
-            output: meshconsole/x64/Release/MeshConsole.exe
+            output: Release/MeshConsole.exe
           - name: x86-Console
             platform: Win32
             project: meshconsole/MeshConsole-2022.vcxproj
-            output: meshconsole/Release/MeshConsole.exe
+            output: Release/MeshConsole.exe
 
     steps:
     - name: Checkout repository
@@ -44,5 +44,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.config.name }}
+        name: MeshAgent-${{ matrix.config.name }}
         path: ${{ matrix.config.output }}
